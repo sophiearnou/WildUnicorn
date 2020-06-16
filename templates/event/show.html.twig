@@ -1,0 +1,34 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"event.show"|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{"event.show"|trans}}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>{{"event.title"|trans}}</th>
+                <td>{{ event.title }}</td>
+            </tr>
+            <tr>
+                <th>{{"event.content"|trans}}</th>
+                <td>{{ event.content }}</td>
+            </tr>
+            <tr>
+                <th>{{"event.created_at"|trans}}</th>
+                <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>{{"event.image"|trans}}</th>
+                <td>{{ event.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="mr-2" href="{{ path('event_index') }}">{{"back_to_list"|trans}}</a>
+
+    <a href="{{ path('event_edit', {'id': event.id}) }}">{{"event.edit"|trans}}</a>
+
+    {{ include('event/_delete_form.html.twig') }}
+{% endblock %}

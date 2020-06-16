@@ -1,0 +1,12 @@
+
+{% block footer %}
+<div id="footer">
+    <div class="container-footer">
+        <p>&copy; Site réalisé par <span>Wild Unicorn</span> | 2020 </p>
+        <p><a href="{{ path('contact') }}">Contact</a> | <a href="{{ path('mentions-legales') }}">Mentions légales</a> | <a href="{{ path('merci') }}">Remerciements</a></p> 
+    </div>                        
+</div>
+{% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"image.index"|trans}}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{"image.index"|trans}}</h1>
+    <a class="btn btn-primary mb-2" href="{{ path('image_new') }}"><i class="fa fa-plus" aria-hidden="true"> {{"image.new"|trans}}</i></a>
+
+    <table id="image-table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>{{"image.name"|trans}}</th>
+                <th>{{"image.image"|trans}}</th>
+                <th>{{"image.actions"|trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.name }}</td>
+                <td>
+                    {% if image is not empty %} {# si img présente affiche là dans tableau#}
+                        <img src="{{ asset(image.webPath) }}" style="max-height: 70px"/>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('image_show', {'id': image.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" href="{{ path('image_edit', {'id': image.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                    <a class="btn btn-danger" href="{{ path('image_delete', {'id': image.id}) }}" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">{{"image.no_record"|trans}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,217 @@
+$thick: 3px;
+$pad: 0.7em;
+
+body {
+  background-color: black;
+  // padding-top: 100px;
+  position: relative;
+}
+.title-event {
+  color: white;
+  background: linear-gradient(
+    45deg,
+    rgba(118, 6, 229, 1) 0%,
+    rgba(173, 12, 214, 1) 22%,
+    rgba(209, 0, 198, 1) 42%,
+    rgba(182, 13, 216, 1) 66%,
+    rgba(114, 0, 237, 1) 100%
+  );
+  font-family: "Anton";
+  // text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 15px 30px;
+  text-align: center;
+  max-width: 180px;
+  white-space: nowrap;
+  z-index: 99999;
+  font-size: 1.2rem;
+}
+.a {
+  text-decoration: none;
+}
+
+.detail-event h2 {
+  color: black;
+  background-color: white;
+  font-family: "Anton";
+  padding: 15px 30px;
+  text-align: center;
+  white-space: nowrap;
+
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .loc {
+      color: white;
+      padding: 0 34px;
+      display: inline-block;
+      border: $thick solid transparent;
+      position: relative;
+      font-size: 2.5em;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+    }
+
+    .colonne1 {
+      background: linear-gradient(
+        45deg,
+        rgba(118, 6, 229, 1) 0%,
+        rgba(173, 12, 214, 1) 22%,
+        rgba(209, 0, 198, 1) 42%,
+        rgba(182, 13, 216, 1) 66%,
+        rgba(114, 0, 237, 1) 100%
+      );
+      border-radius: 2px;
+    }
+
+    p {
+      font-family: "Anton", sans-serif;
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+}
+
+#date {
+  font-family: "Roboto";
+  background: linear-gradient(
+    45deg,
+    rgba(118, 6, 229, 1) 0%,
+    rgba(173, 12, 214, 1) 22%,
+    rgba(209, 0, 198, 1) 42%,
+    rgba(182, 13, 216, 1) 66%,
+    rgba(114, 0, 237, 1) 100%
+  );
+  padding: 10px 20px;
+  color: white;
+  transform: translateX(-10px);
+  text-align: right;
+  position: relative;
+  display: block;
+  //ne prends pas le padding en compte
+  box-sizing: border-box;
+}
+
+.line {
+  position: absolute;
+  background: white;
+
+  &.-right,
+  &.-left {
+    width: $thick;
+    bottom: -$thick;
+    top: -$thick;
+    transform: scale3d(1, 0, 1);
+  }
+
+  &.-top,
+  &.-bottom {
+    height: $thick;
+    left: -$thick;
+    right: -$thick;
+    transform: scale3d(0, 1, 1);
+  }
+
+  &.-right {
+    right: -$thick;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+    transform-origin: top;
+  }
+
+  &.-top {
+    top: -$thick;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+  }
+
+  &.-left {
+    left: -$thick;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+  }
+
+  &.-bottom {
+    bottom: -$thick;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+    transform-origin: right;
+  }
+}
+.effet {
+    color: white;
+    padding: 0 34px; 
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+.effet:hover,
+.effet:active {
+  text-decoration: none;
+  .text {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+
+  &:after {
+    transform: scale3d(0, 1, 1);
+    right: -$thick;
+    left: -$thick;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s,
+      right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+  }
+
+  .line {
+    transform: scale3d(1, 1, 1);
+
+    &.-right {
+      transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+      transform-origin: bottom;
+    }
+
+    &.-top {
+      transition: transform 0.08s linear 0.4s;
+      transform-origin: right;
+    }
+
+    &.-left {
+      transition: transform 0.08s linear 0.48s;
+      transform-origin: top;
+    }
+
+    &.-bottom {
+      transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+      transform-origin: left;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .detail h1 {
+    padding: 0px 15px 0 0;
+    font-size: 1.7rem;
+  }
+
+  .detail-event h2 {
+    color: black;
+    background-color: white;
+    font-family: "Anton";
+    padding: 10px 15px;
+    text-align: center;
+    // max-width: 150px;
+    white-space: nowrap;
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+

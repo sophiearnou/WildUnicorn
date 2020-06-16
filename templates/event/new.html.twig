@@ -1,0 +1,13 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"event.new"|trans}}{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>{{"event.new"|trans}}</h1>
+
+    {{ include('event/_form.html.twig') }}
+
+    <a href="{{ path('admin') }}">{{"back_to_list"|trans}}</a>
+    </div>
+{% endblock %}

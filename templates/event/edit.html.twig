@@ -1,0 +1,13 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{ "event.edit"|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "event.edit"|trans }}</h1>
+
+    {{ include('event/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin') }}">{{"back_to_list"|trans}}</a>
+
+    {{ include('event/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{# {% block title %}Home{% endblock %} #}
+
+{% block body %}
+
+{% if events|length %}
+<div class="container-fluide">
+{{include('barre/index.html.twig')}}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    {% for event in events %}
+    <div class="carousel-item {%if loop.first %} active {% endif %}" style="background-image:url('/uploads/images/{{ event.image.path }}')">
+      <img src="/uploads/images/{{ event.image.path }}" class="d-block">
+      <div>
+            <h2 class=text-home>{{ event.title |upper}}</h2>
+            <div class="text">{{ event.createdAt|date('d/m/Y') }}</div>
+            <div class="text">{{ event.createdAt|date('H:i') }}</div>
+            <div class="text content">{{ event.location|striptags|slice(0, 20)|raw }}</div>
+            <a href="{{path('event_show', {'id': event.id}) }}"><i class="mr-5 fas fa-lg fa-arrow-right"></i>{{"home.a_detail"|trans}}</a>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+<section>
+<div container>
+    <div id="home"class="container-home text-center">
+        <h1 class="title-home font-weight-light">{{"home.a_propos"|trans}}<i class="fas fa-compact-disc fa-spin"></i></h1>
+        <p class="text-home text-center">{{"home.a_fete"|trans}}</br>{{"home.a_fete2"|trans}}<br>{{"home.a_fete3"|trans}}<br>{{"home.a_fete4"|trans}}<br>{{"home.a_fete5"|trans}}</p>
+    </div>
+  <div class="container-recherche"style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
+      <h3>{{"home.a_concert"|trans}}</h3>
+      <div class="search" style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
+          <input type="text" name="q" placeholder="Nom du groupe"style="padding: 10px; background: #EFEFEF; width: 200px;">
+          <div class="search-result" style="display:flex; justify-content:center; align-items:center; flex-direction: column;width: 100%"></div>
+      </div>
+  </div>
+</div>
+</section>
+
+{% else %}
+
+{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}

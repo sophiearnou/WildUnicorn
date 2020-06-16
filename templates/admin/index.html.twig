@@ -1,0 +1,50 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"event.index"|trans}}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{"event.index"|trans}}</h1>
+
+    <a class="btn btn-primary mb-2" href="{{ path('event_new') }}"><i class="fa fa-plus" aria-hidden="true"> {{"event.new"|trans}}</i></a>
+    <table id="event-table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>{{"event.title"|trans}}</th>
+                <th>{{"event.categories"|trans}}</th>
+                <th>{{"event.content"|trans}}</th>
+                <th>{{"event.created_at"|trans}}</th>
+                <th>{{"event.image"|trans}}</th>
+                <th>{{"event.actions"|trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td><a href="{{path("event_show", {"id": event.id})}}"> {{ event.title }}</a></td>
+                <td> {% for category in event.categories %}
+                        <span class="badge badge-primary m-2">{{ category }}</span>
+                    {% endfor %}
+                </td>
+                <td>{{ event.content|striptags|slice(0, 20)|raw }}</td> {# affiche seulement 20 caractères en partant de 0#}
+                <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    {% if event.image is not empty %} {# si img présente affiche là dans tableau#}
+                        <img src="{{ asset(event.image.webPath) }}" style="max-height: 70px"/>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('event_show', {'id': event.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" href="{{ path('event_edit', {'id': event.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                    <a class="btn btn-danger" href="{{ path('event_delete', {'id': event.id}) }}" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">{{"event.no_record"|trans}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

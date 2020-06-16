@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('merci') }}
+{% endblock %}
+
+{% block title %}{{"thanks.thanks1"|trans}}{% endblock %}
+{% block body %}
+{# rajout barre #}
+<div class="container-fluide">
+    {{include('barre/index.html.twig')}}
+</div>
+<section>
+
+<div id="blockmerci" class="container">
+    <h1 class="merci-titre">{{"thanks.thanks1"|trans}}</h1>
+    <p>
+        Ce site est un projet de soutenance avec des données fictives. En conséquence, toute ressemblance, ou similitude avec des personnages 
+        et des groupes existants ou ayant existé, ne saurait être que coïncidence fortuite.
+    </p> 
+    <h3>{{"thanks.thanks2"|trans}}:</h3>
+    <p>
+        MERCI à nos formateurs (Jérôme , Igor, Loic, et Guillaume) qui ont été présent même en dehors des horaires pour nous aider et celà même à 23h!!!.<br> 
+        MERCI à Émeline et Marion pour la préparation à nos futurs entretiens.<br>
+        MERCI à Chahineze pour son suivi.<br>
+        MERCI à Brigitte et Alan pour pour avoir cru en notre potentiel et leur organisation.<br>
+        MERCI à nos sponsors qui ont crus en nous et nous ont permis de continuer la formation malgrès le confinement.<br>
+        Un grand MERCI pour votre soutien ! 
+    </p>
+    <p>
+        Signé : Sophie, Julien, Mathieu et Julie
+    </p> 
+</div>
+</section>
+{% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}

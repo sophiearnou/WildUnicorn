@@ -1,0 +1,113 @@
+//background-image: url(../images/licorne.png);
+
+
+
+
+.logo {
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+  .text-effect {
+    width: 100%;
+    height: 100%;
+    
+    filter: contrast(110%) brightness(190%);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 41%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 54%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+  }
+}
+// ----------------
+.image-licorne {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  transform: translate(-50%, -50%) scale(1.4);
+  filter: blur(1px);
+  width: auto;
+  height: 100%;
+} 
+
+
+.gradient,
+.spotlight {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  pointer-events: none;
+  z-index: 10;  
+}
+
+.gradient {
+  background: linear-gradient(45deg, red, blue);
+  mix-blend-mode: multiply;
+}
+
+.spotlight {
+  animation: light 5s infinite linear;
+  background: 
+    radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, 
+    radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
+  top: -100%; left: -100%;
+  mix-blend-mode: color-dodge;
+}
+
+ 
+@keyframes light {
+  100% {
+    transform: translate3d(50%, 50%, 0);
+  }
+}
+@media only screen and (max-width: 375px) {
+  .logo {
+
+  &:after {
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+  }
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    padding-top: 22px;
+
+  &:after {
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+  }
+}
+}
+@media only screen and (min-width: 992px) {
+  .logo {
+
+  &:after {
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 30%,rgba(0,0,0,0) 40%,rgba(0,0,0,0) 58%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+  }
+  .image-licorne {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ 
+} 
+}
+}
+@media only screen and (min-width: 1200px) {
+   .logo {
+
+  &:after {
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 40%,rgba(0,0,0,0) 40%,rgba(0,0,0,0) 58%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+  }
+  
+}
+}
+
+
+
+   
+
+

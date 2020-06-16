@@ -1,0 +1,129 @@
+user:
+  name: User
+  email: Email
+  email_example: johndoe@gmail.com
+  terms: <a href="%url%" target="blank">Read terms and conditions (in French)</a>
+  password: Password
+  save: Submit
+  register: Register
+  password_message: Please enter a password with more than 6 characters.
+  contact_message: Please enter a message with more than 50 characters.
+  terms_message: You should agree to our terms.
+  login: Log in!
+  logout: Logout
+  sign_in: Please sign in.
+  connexion: Sign in
+  index: Users' list
+  new: Add an user
+  roles: Roles
+  actions: Actions
+  no_record: No users found
+  contact: Contact us 
+  edit: Edit an user
+  success:
+    new: The user "%title%" has been added.
+    edit: The user "%title%" has been modified.
+    delete: The user "%title%" has been deleted.
+
+
+adminMenu:
+  event: Shows
+  category: Categories
+  image: Images
+  user: Users
+  logout: Logout
+
+event:
+  index: Events' list
+  new: Add an event
+  title: Title
+  categories: Categories
+  content: Content
+  created_at: Created at
+  image: Images
+  actions: Actions
+  no_record: No events found
+  delete_image: Delete image
+  location: Location
+  edit: Edit an event
+  delete: Delete an event
+  show: Event
+  success:
+    new: The event "%title%" has been added.
+    edit: The event "%title%" has been modified.
+    delete: The event "%title%" has been deleted.
+
+category:
+  index: Categories' list
+  new: Add a category
+  title: Title
+  actions: Actions
+  no_record: No categories found
+  edit: Edit a category
+  show: Category
+  success:
+    new: The category "%title%" has been added.
+    edit: The category "%title%" has been modified.
+    delete: The category "%title%" has been deleted.
+
+image:
+  index: Images' list
+  new: Add an image
+  name: Name
+  image: Image
+  actions: Actions
+  no_record: No images found
+  file: Image's path
+  edit: Edit an image
+  show: Image
+  success:
+    new: The image "%title%" has been added.
+    edit: The image "%title%" has been modified.
+    delete: The image "%title%" has been deleted.
+
+form:
+  title:
+    category: Category's title
+
+contact:
+  success: Your message has been sent 
+
+save: Save
+delete: Delete
+back_to_list: Back to list
+send: Send
+message: Message
+
+menu:
+  login: Login
+  register: Register
+  logout: Logout
+  accueil: Home
+  concert: Concert
+  administration: Administration
+  remerciement: Acknowledgement
+  contact: Contact
+
+
+home:
+  a_propos: About
+  a_fete: You feel like partying?
+  a_fete2: Looking for a good plan for the weekend?
+  a_fete3: Whatever your style, you've come to the right place.
+  a_fete4: Meet WildUnicorn!
+  a_fete5: WildUnicorn is a site which gathers all the musical events of luxembourg.
+  a_concert: I'm looking for a concert
+  a_detail: Detail
+
+detail:
+  song: Song
+  vid: Video
+  buy: Buy tickets
+
+thanks:
+  thanks1: Thank you
+  thanks2: A word of thanks for NumericALL
+
+mentionleg:
+  mentionleg: Legal Notices
+

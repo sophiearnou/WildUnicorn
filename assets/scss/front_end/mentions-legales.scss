@@ -1,0 +1,32 @@
+#blockmention {
+  background-color: #3a3a3aa2;
+  padding: 15px 20px 20px 20px;
+  border-color: #ff00ff;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.mention-h1 {
+  margin-top: 20px;
+  font-size: 50px;
+  opacity: 0.4;
+  color: #ff00ff;
+  font-family: "Anton";
+}
+
+.mention-h2 {
+  color: #ff00ff;
+  font-family: "Anton";
+  margin: 35px;
+  font-size: 25px;
+  opacity: 0.7;
+  text-shadow: none;
+}
+
+.mention-p {
+  text-align: justify;
+  opacity: 0.7;
+  color: white;
+}

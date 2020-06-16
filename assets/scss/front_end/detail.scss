@@ -1,0 +1,171 @@
+@import "../common.scss";
+
+body {
+  background-color: black;
+}
+
+// ALL
+.container {
+  margin-top: 90px;
+}
+
+// Header
+.detail h1 {
+  color: black;
+  background-color: white;
+  font-family: "Anton";
+  padding: 15px 30px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .loc {
+    color: white;
+    margin-left: 30px;
+  }
+}
+
+#date {
+  font-family: "Roboto";
+  background: linear-gradient(
+    45deg,
+    rgba(118, 6, 229, 1) 0%,
+    rgba(173, 12, 214, 1) 22%,
+    rgba(209, 0, 198, 1) 42%,
+    rgba(182, 13, 216, 1) 66%,
+    rgba(114, 0, 237, 1) 100%
+  );
+  padding: 10px 20px;
+  color: white;
+  transform: translateX(-10px);
+  text-align: right;
+  position: relative;
+  display: block;
+  //ne prends pas le padding en compte
+  box-sizing: border-box;
+}
+
+// image
+img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 8px;
+}
+
+.hover img {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.hover:hover img {
+  opacity: 0.5;
+}
+
+// Contenu
+.content {
+  color: white;
+  font-family: "Roboto";
+
+  p {
+    margin: 10% 0;
+    text-align: center;
+  }
+}
+
+// Commentaire
+.map {
+  margin: 50px;
+  text-align: center;
+}
+
+// Links
+.link {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 25px;
+
+  a {
+    border-radius: 5px;
+    background: linear-gradient(
+      45deg,
+      rgba(118, 6, 229, 1) 0%,
+      rgba(173, 12, 214, 1) 22%,
+      rgba(209, 0, 198, 1) 42%,
+      rgba(182, 13, 216, 1) 66%,
+      rgba(114, 0, 237, 1) 100%
+    );
+    color: white;
+    font-family: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+  }
+}
+
+// Media Queries
+
+@media screen and (max-width: 375px) {
+  .container {
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  nav .navbar-nav {
+    background-color: black;
+  }
+  .detail h1 {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+  #date {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-bottom: 9px;
+
+  }
+  .detail-header .loc {
+    margin-left: 10px;
+    font-size: 10px;
+  }
+
+  #cat {
+    padding: 3px;
+    font-size: 10px;
+  }
+
+  .content p {
+    font-size: 13px;
+    max-width: 250px;
+    padding: 5px;
+    text-align: justify;
+    justify-content: center;
+    margin: auto;
+  }
+
+  img {
+    margin-bottom: 1px;
+  }
+  .link {
+    font-size: 10px;
+    display: flex;
+    align-self: center;
+  }
+
+  .map {
+    margin: 20px;
+    text-align: center;
+  }
+}
+.d-flex .justify-content-between {
+  display:none;
+}

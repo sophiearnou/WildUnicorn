@@ -1,0 +1,29 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"image.show"|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{"image.show"|trans}}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>{{"image.name"|trans}}</th>
+                <td>{{ image.name }}</td>
+            </tr>
+            <tr>
+                <th>{{"image.image"|trans}}</th>
+                <td>
+                    {% if image is not empty %} {# si img présente affiche là dans tableau#}
+                        <img class="img-fluid" src="{{ asset(image.webPath) }}">
+                    {% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="mr-2" href="{{ path('admin_image') }}">{{"back_to_list"|trans}}</a>
+
+    <a href="{{ path('image_edit', {'id': image.id}) }}">{{"image.edit"|trans}}</a>
+
+    {{ include('image/_delete_form.html.twig') }}
+{% endblock %}

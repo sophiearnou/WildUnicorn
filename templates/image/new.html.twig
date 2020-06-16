@@ -1,0 +1,11 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"image.new"|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{"image.new"|trans}}</h1>
+
+    {{ include('image/_form.html.twig') }}
+
+    <a href="{{ path('admin_image') }}">{{"back_to_list"|trans}}</a>
+{% endblock %}

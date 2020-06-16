@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+    {{ form_errors(form) }} {# Affiche les eventuelles erreurs #}
+        {{ form_row(form.title) }}
+        {{ form_row(form.categories, {label_attr: {class: 'checkbox-custom'}}) }}
+        {{ form_row(form.content) }}
+        <div class="media mb-3">
+            {% if event is defined and event.image is not empty %}
+            {# asset permet de pointer sur le dossier 'public', twig appelle la méthode 'getWebPath' de l'image #}
+            <img src="{{ asset(event.image.webPath) }}" class="align-left-center mr-3" style="max-width:180px"/>
+            {% endif %}
+            <div class="media-body">
+                {{ form_row(form.image) }}
+                {{ form_row(form.deleteImage) }}
+            </div>
+        </div>
+        {{ form_row(form.location) }}
+        {{ form_row(form.created_at)}}
+
+        {{ form_row(form.save) }}
+    
+{{ form_end(form) }}

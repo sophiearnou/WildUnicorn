@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block title %}{{ event.title }}{% endblock %}
+{% block body %}
+{# rajout barre #}
+<div class="container-fluide">
+    {{include('barre/index.html.twig')}}
+</div>
+<div class="container"> 
+    <div class="detail">
+        <div class="detail-header">
+            <h1>{{ event.title }}</h1>
+            <div class="metadata" id="date"> {{ event.createdAt|date('H:i') }} </div>
+            <div class="loc"> At {{ event.location }}</div>
+        </div>        
+        <div class="bouton">
+            <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
+        {% if is_granted('ROLE_ADMIN') %}
+                {{ include('event/_delete_form.html.twig') }}
+            </div>   
+        {% endif %}
+        <div class="content">
+            <div class="hover">
+                <img src="/uploads/images/{{ event.image.path }}" alt="">
+            </div>            
+            <p> {{ event.content }}</p>              
+        </div>
+        <div class="link">          
+           <a href="">{{"detail.song"|trans}}</a> 
+           <a href="">{{"detail.vid"|trans}}</a> 
+           <a href="">{{"detail.buy"|trans}}</a> 
+        </div>
+        {# Appel API Disqus #}
+        <div class="map">
+            <div id="disqus_thread"></div> 
+        </div>        
+    </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+
+
+{# Script API DISQUS #}
+<script>
+
+var disqus_config = function () {
+this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = {{ event.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://wild-unicorn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+{% endblock %}

@@ -1,0 +1,124 @@
+user:
+  name: Utilisateur
+  email: Email
+  email_example: anonyme@gmail.com
+  terms: <a href="%url%" target="blank">Lire les conditions d'utilisations des données</a>
+  password: Mot de passe
+  save: M'enregistrer
+  register: M'inscrire
+  password_message: Veuillez entrez un mot de passe de plus de 6 caractères.
+  contact_message: Veuillez entrez un message de plus de 50 caractères.
+  terms_message: Veuillez agréer à nos conditions.
+  login: Connexion
+  logout: Déconnexion
+  sign_in: Veuillez vous connecter.
+  connexion: Se connecter
+  index: Liste des utilisateurs
+  new: Ajouter un utilisateur
+  roles: Rôles
+  actions: Actions
+  no_record: Pas d'utilisateurs trouvés
+  contact: Contactez-nous
+  message: Message
+
+
+adminMenu:
+  event: Concerts
+  category: Catégories
+  image: Images
+  user: Utilisateurs
+  logout: Se déconnecter
+
+event:
+  index: Liste des événements
+  new: Ajout d'un événement
+  title: Titre
+  categories: Catégories
+  content: Contenu
+  created_at: Crée le
+  image: Images
+  actions: Actions
+  no_record: Pas d'événements trouvés
+  delete_image: Supprimer l'image
+  location: Localisation
+  edit: Editer un événement
+  delete: Supprimer un événement
+  show: Evènement
+  success:
+    new: L'événement "%title%" a bien été ajouté.
+    edit: L'événement "%title%" a bien été modifié.
+    delete: L'événement "%title%" a bien été supprimé.
+
+category:
+  index: Liste des catégories
+  new: Ajout d'une catégorie
+  title: Titre
+  actions: Actions
+  no_record: Pas de catégories trouvées
+  edit: Modifier une catégorie
+  show: Catégorie
+  success:
+    new: La catégorie "%title%" a bien été ajouté.
+    edit: La catégorie "%title%" a bien été modifié.
+    delete: La catégorie "%title%" a bien été supprimé.
+
+image:
+  index: Liste des images
+  new: Ajout d'une image
+  name: Nom
+  image: Image
+  actions: Actions
+  no_record: Pas d'images trouvées
+  file: Chemin de l'image
+  edit: Modifier une image
+  show: Image
+  success:
+    new: L'image' "%title%" a bien été ajouté.
+    edit: L'image' "%title%" a bien été modifié.
+    delete: L'image' "%title%" a bien été supprimé.
+
+form:
+  title:
+    category: Titre de la catégorie
+
+contact:
+  success: Votre message a bien été envoyé 
+
+save: Enregistrer
+delete: Supprimer
+back_to_list: De retour au listing
+send: Envoyer
+message: Message
+
+menu:
+  login: Se connecter
+  register: S'inscrire
+  logout: Se déconnecter
+  accueil: Accueil
+  concert: Concert
+  administration: Administration
+  remerciement: Remerciement
+  contact: Contact
+  
+home:
+  a_propos: À propos
+  a_fete: Tu as envie de faire la fête ?
+  a_fete2: Tu cherches un bon plan pour le week-end ?
+  a_fete3: Quelque soit ton style, tu es au bon endroit.
+  a_fete4: Je te présente WildUnicorn !
+  a_fete5: WildUnicorn est un site qui regroupe tous les événements musicaux du luxembourg.
+  a_concert: Je recherche un concert
+  a_detail: Détail
+
+detail:
+  song: Son
+  vid: Vidéo
+  buy: Acheter des tickets
+
+thanks:
+  thanks1: Remerciements
+  thanks2: Un mot de remerciement pour NumericALL
+
+mentionleg:
+  mentionleg: Mentions Légales
+

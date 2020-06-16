@@ -1,0 +1,13 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"user.new"|trans}}{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1>{{"user.new"|trans}}</h1>
+
+    {{ include('user/_form.html.twig') }}
+
+    <a href="{{ path('admin_user') }}">{{"back_to_list"|trans}}</a>
+    </div>
+{% endblock %}

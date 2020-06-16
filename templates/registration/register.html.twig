@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{"user.register"|trans}}{% endblock %}
+
+{% block body %}
+{{include('barre/index.html.twig')}}
+<div class="login-container text-c animated flipInX">
+    <div>
+        <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+    </div>
+        <h3 class="text-whitesmoke">{{"user.register"|trans}}</h3>
+    <div class="container-content">
+        <form class="margin-t text-whitesmoke" method="POST">
+        {{ form_start(registrationForm) }}
+            <div class="form-group">
+                {{ form_row(registrationForm.email, 
+                {'attr': {"class": "form-control", 'placeholder': 'user.email_example'|trans}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.plainPassword, 
+                {'attr': {"class": "form-control", 'placeholder': "user.password"|trans }}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(registrationForm.agreeTerms, {label_attr: {class: 'checkbox-custom'}}) }}
+            </div>
+
+            <button type="submit" class="form-button button-l margin-b">
+                {{"user.register"|trans}}
+            </button>
+            <a class="text-rose" href="{{path("app_register")}}">
+                <small>{{"user.login"|trans}}</small>
+            </a>
+        {{ form_end(registrationForm) }}
+        </form>
+    </div>
+    <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        </svg>
+</div>
+
+    {#{{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}  #}
+
+    {# <div class="container">
+        <h1>{{"user.register"|trans}}</h1>
+        <div class="card">
+            <div class="card-body">
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email, 
+                    {'attr': {"class": "form-control", 'placeholder': 'user.email_example'|trans}}) }}
+                    {{ form_row(registrationForm.plainPassword, 
+                    {'attr': {"class": "form-control", 'placeholder': "user.password"|trans }}) }}
+                    {{ form_row(registrationForm.agreeTerms, {label_attr: {class: 'checkbox-custom'}}) }}
+                    
+            </div>
+            <div class="card-footer text-right">
+                {{form_row(registrationForm.save)}}
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div> #}
+{% endblock %}

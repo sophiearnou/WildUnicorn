@@ -1,0 +1,11 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{{"category.new"|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{"category.new"|trans}}</h1>
+
+    {{ include('category/_form.html.twig') }}
+
+    <a href="{{ path('admin_category') }}">{{"back_to_list"|trans}}</a>
+{% endblock %}

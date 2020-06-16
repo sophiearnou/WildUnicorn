@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{# rajout barre #}
+<div class="container-fluid">
+    {{include('barre/index.html.twig')}}
+</div>
+    <div class="contact container">
+        <div class="title">
+        <h1 class="title-event">Événements<i class="fas fa-compact-disc fa-spin"></i></h1>
+        </div>
+        {% for event in events %}
+        <section class="portfolio-experiment">
+        <div class="effet">
+            <div class="detail-event">
+                <div class="row detail-header">
+                    <h2>{{ event.title }}</h2>
+            <div class="metadata colonne1" id="date"><a href="{{path('event_show', {'id': event.id}) }}"><i class="mr-5 fas fa-lg fa-arrow-right"></i>Détail</a> </div>
+            <div class="loc"> At {{ event.location }} | {{ event.createdAt|date('H:i') }}</div>
+            <div class="colonne2 loc"></div>
+                    <span class="line -right"></span>
+                    <span class="line -top"></span>
+                    <span class="line -left"></span>
+                    <span class="line -bottom"></span>
+            </div>        
+                <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
+            </div>
+        </div>
+        </section>
+        {% endfor %}  
+    </div>
+{% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}
